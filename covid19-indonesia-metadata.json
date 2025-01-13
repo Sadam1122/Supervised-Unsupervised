@@ -1,0 +1,237 @@
+{
+    "@context": {
+      "@language": "en",
+      "@vocab": "https://schema.org/",
+      "citeAs": "cr:citeAs",
+      "column": "cr:column",
+      "conformsTo": "dct:conformsTo",
+      "cr": "http://mlcommons.org/croissant/",
+      "data": {
+        "@id": "cr:data",
+        "@type": "@json"
+      },
+      "dataBiases": "cr:dataBiases",
+      "dataCollection": "cr:dataCollection",
+      "dataType": {
+        "@id": "cr:dataType",
+        "@type": "@vocab"
+      },
+      "dct": "http://purl.org/dc/terms/",
+      "extract": "cr:extract",
+      "field": "cr:field",
+      "fileProperty": "cr:fileProperty",
+      "fileObject": "cr:fileObject",
+      "fileSet": "cr:fileSet",
+      "format": "cr:format",
+      "includes": "cr:includes",
+      "isEnumeration": "cr:isEnumeration",
+      "jsonPath": "cr:jsonPath",
+      "key": "cr:key",
+      "md5": "cr:md5",
+      "parentField": "cr:parentField",
+      "path": "cr:path",
+      "personalSensitiveInformation": "cr:personalSensitiveInformation",
+      "recordSet": "cr:recordSet",
+      "references": "cr:references",
+      "regex": "cr:regex",
+      "repeated": "cr:repeated",
+      "replace": "cr:replace",
+      "sc": "https://schema.org/",
+      "separator": "cr:separator",
+      "source": "cr:source",
+      "subField": "cr:subField",
+      "transform": "cr:transform",
+      "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Based on reports from official sources",
+    "citeAs": "10.34740/kaggle/dsv/4214699",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+      "@type": "sc:CreativeWork",
+      "name": "CC BY-NC-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    "distribution": [
+      {
+        "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/hendratno/covid19-indonesia?datasetVersionNumber=86",
+        "contentSize": "1.224 MB",
+        "md5": "irrmxbFZkzwkltKuz916qw==",
+        "encodingFormat": "application/zip",
+        "@id": "archive.zip",
+        "@type": "cr:FileObject",
+        "name": "archive.zip",
+        "description": "Archive containing all the contents of the COVID-19 Indonesia Dataset dataset"
+      },
+      {
+        "contentUrl": "covid_19_indonesia_time_series_all.csv",
+        "containedIn": {
+          "@id": "archive.zip"
+        },
+        "encodingFormat": "text/csv",
+        "@id": "covid_19_indonesia_time_series_all.csv_fileobject",
+        "@type": "cr:FileObject",
+        "name": "covid_19_indonesia_time_series_all.csv",
+        "description": "The COVID-19 pandemic dataset in Indonesia, time series. This dataset is a compilation of various open data sources, including: covid19.go.id (pandemic data), kemendagri.go.id (demographic data), bps.go.id (demographic data), as well as some calculations of the relationship of the data. This dataset contains a time series of COVID-19 pandemic events in Indonesia, at the country level to province level. If possible, in the future I will provide it to the city/regency level."
+      }
+    ],
+    "recordSet": [
+      {
+        "field": [
+          {
+            "dataType": [
+              "sc:Date"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "Date"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/Date",
+            "@type": "cr:Field",
+            "name": "Date",
+            "description": "Reporting date."
+          },
+          {
+            "dataType": [
+              "sc:Text"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "Location ISO Code"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/Location+ISO+Code",
+            "@type": "cr:Field",
+            "name": "Location ISO Code",
+            "description": "Location codes based on ISO standards."
+          },
+          {
+            "dataType": [
+              "sc:Text"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "Location"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/Location",
+            "@type": "cr:Field",
+            "name": "Location",
+            "description": "Location name."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "New Cases"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/New+Cases",
+            "@type": "cr:Field",
+            "name": "New Cases",
+            "description": "New daily positive cases."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "New Deaths"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/New+Deaths",
+            "@type": "cr:Field",
+            "name": "New Deaths",
+            "description": "New daily deaths."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "New Recovered"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/New+Recovered",
+            "@type": "cr:Field",
+            "name": "New Recovered",
+            "description": "New daily recovered."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "New Active Cases"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/New+Active+Cases",
+            "@type": "cr:Field",
+            "name": "New Active Cases",
+            "description": "New daily active cases."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "Total Cases"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/Total+Cases",
+            "@type": "cr:Field",
+            "name": "Total Cases",
+            "description": "Total positive cases until the related date."
+          },
+          {
+            "dataType": [
+              "sc:Integer"
+            ],
+            "source": {
+              "fileObject": {
+                "@id": "covid_19_indonesia_time_series_all.csv_fileobject"
+              },
+              "extract": {
+                "column": "Total Deaths"
+              }
+            },
+            "@id": "covid_19_indonesia_time_series_all.csv/Total+Deaths",
+            "@type": "cr:Field",
+            "name": "Total Deaths",
+            "description": "Total deaths until the related date."
+          }
+        ]
+      }
+    ]
+  }
+  
